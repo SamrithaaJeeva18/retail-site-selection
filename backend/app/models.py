@@ -110,6 +110,7 @@ class CandidateSite(Base):
     )
     confidence_score: Mapped[float | None] = mapped_column(Numeric(5, 2), nullable=True)
     notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    provenance_note: Mapped[str | None] = mapped_column(Text, nullable=True)
 
     assessment: Mapped[Assessment | None] = relationship(
         back_populates='candidate_sites',
